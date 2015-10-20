@@ -42,7 +42,8 @@ Puis afficher le nombre et la liste des résultats``
 
 - ``Formatter l'affichage des infos d'articles (date en français, conversion des sauts de ligne en balises <br>, première lettre en majuscule sur les noms des auteurs), de l'année en cours dans le footer``
 
-- ``Faire un script qui insert automatiquement des articles avec du contenu``
+- ``Faire un script qui insert automatiquement des articles avec du contenu.
+Importer les contenus depuis un flux XML (http://feeds.betacie.com/viedemerde)``
 
 - ``Dans send.php, faire en sorte de se prémunir des failles/injections XSS``
 
