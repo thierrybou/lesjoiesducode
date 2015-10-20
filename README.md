@@ -49,6 +49,8 @@ Importer les contenus depuis un flux XML (http://feeds.betacie.com/viedemerde)``
 
 - ``Dans send.php, faire en sorte de se prémunir des failles/injections XSS``
 
-- ``Dans send.php, autoriser les balises : <b> <strong> <i> <em>``
+- ``Dans send.php, autoriser les balises <b> <strong> <i> <em> pour le champ "name"`` 
+
+- ``Dans send.php, ne supprimer que la balise <script> pour le champ "content"``
 
 
