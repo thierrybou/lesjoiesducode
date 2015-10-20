@@ -40,6 +40,8 @@ Puis afficher le nombre et la liste des résultats``
 
 #### *** BONUS *** ####
 
+- ``Rendre la navbar dynamique avec affichage de la page active``
+
 - ``Formatter l'affichage des infos d'articles (date en français, conversion des sauts de ligne en balises <br>, première lettre en majuscule sur les noms des auteurs), de l'année en cours dans le footer``
 
 - ``Faire un script qui insert automatiquement des articles avec du contenu.
