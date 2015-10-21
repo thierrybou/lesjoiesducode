@@ -34,6 +34,11 @@
 					</div>
 				</form>
 
+				<ul class="nav navbar-nav navbar-right">
+					<li class="<?= ($current_page == 'login.php' ? ' active' : '')?>"><a href="login.php">Connexion</a></li>
+					<li class="<?= ($current_page == 'register.php' ? ' active' : '')?>"><a href="register.php">Inscription</a></li>
+				</ul>
+
 			</div><!--/.nav-collapse -->
 		</div>
 	</nav>
