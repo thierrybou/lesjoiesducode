@@ -1,8 +1,5 @@
 <?php
-<<<<<<< HEAD
 require_once 'inc/config.php';
-=======
->>>>>>> v1
 require_once 'inc/db.php';
 require_once 'inc/func.php';
 ?>

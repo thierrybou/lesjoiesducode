@@ -10,7 +10,6 @@
 				<a class="navbar-brand" href="index.php">Les Joies du Code</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
-<<<<<<< HEAD
 
 				<ul class="nav navbar-nav">
 					<?php
@@ -22,12 +21,6 @@
 					?>
 					<li class="<?= $active ?>"><a href="<?= $page_url ?>"><?= $page_name ?></a></li>
 					<?php } ?>
-=======
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.php">Home</a></li>
-					<li><a href="random.php">JDC aléatoire</a></li>
-					<li><a href="send.php">Envoyer votre JDC</a></li>
->>>>>>> v1
 				</ul>
 
 				<form class="navbar-form navbar-right" action="search.php" method="GET">
