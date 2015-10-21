@@ -1,7 +1,7 @@
 <?php
 require_once 'partials/header.php';
 
-print_r($_POST);
+//print_r($_POST);
 
 // Récupérer les données du formulaire depuis le tableau $_POST
 
