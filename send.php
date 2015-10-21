@@ -4,8 +4,13 @@ require_once 'partials/header.php';
 print_r($_POST);
 
 // Récupérer les données du formulaire depuis le tableau $_POST
+<<<<<<< HEAD
 $name = !empty($_POST['name']) ? strip_tags($_POST['name']) : '';
 $content = !empty($_POST['content']) ? strip_tags($_POST['content']) : '';
+=======
+$name = !empty($_POST['name']) ? $_POST['name'] : '';
+$content = !empty($_POST['content']) ? $_POST['content'] : '';
+>>>>>>> v1
 
 // Initialiser un tableau $errors et une chaine $result
 $errors = array();

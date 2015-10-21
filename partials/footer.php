@@ -2,7 +2,11 @@
 
 	<footer class="footer">
 		<div class="container">
+<<<<<<< HEAD
 			<p class="text-muted">Les Joies du Code © <?= date('Y') ?></p>
+=======
+			<p class="text-muted">Les Joies du Code © 1970</p>
+>>>>>>> v1
 		</div>
 	</footer>
 
