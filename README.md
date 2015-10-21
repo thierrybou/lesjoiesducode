@@ -40,12 +40,17 @@ Puis afficher le nombre et la liste des résultats``
 
 #### *** BONUS *** ####
 
+- ``Rendre la navbar dynamique avec affichage de la page active``
+
 - ``Formatter l'affichage des infos d'articles (date en français, conversion des sauts de ligne en balises <br>, première lettre en majuscule sur les noms des auteurs), de l'année en cours dans le footer``
 
-- ``Faire un script qui insert automatiquement des articles avec du contenu``
+- ``Faire un script qui insert automatiquement des articles avec du contenu.
+Importer les contenus depuis un flux XML (http://feeds.betacie.com/viedemerde)``
 
 - ``Dans send.php, faire en sorte de se prémunir des failles/injections XSS``
 
-- ``Dans send.php, autoriser les balises : <b> <strong> <i> <em>``
+- ``Dans send.php, autoriser les balises <b> <strong> <i> <em> pour le champ "name"`` 
+
+- ``Dans send.php, ne supprimer que la balise <script> pour le champ "content"``
 
 
