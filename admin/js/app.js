@@ -1,7 +1,15 @@
 $(function() {
 
+	var setSidebarTogglePos = function() {
+		var width = $('#sidebar-left').css('display') == 'none' ? 20 : $('#sidebar-left').width();
+		console.log(width);
+		$('#sidebar-toggle').css('left', width+'px').show();
+	}
+
 	$('#sidebar-toggle').click(function() {
 		//$(this).find('span').switchClass('.glyphicon-chevron-left', '.glyphicon-chevron-right');
+
+		$('#sidebar-left').toggle();
 
 		if ($(this).find('span').hasClass('glyphicon-chevron-left')) {
 			$(this).removeClass('sidebar-toggle-left').addClass('sidebar-toggle-right');
@@ -13,7 +21,14 @@ $(function() {
 			$('#main-container').attr('class', 'col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main');
 		}
 
-		$('#sidebar-left').toggle();
+		setSidebarTogglePos();
+	});
+
+	setTimeout(function() {
+		setSidebarTogglePos();
+	}, 500);
+	$(window).resize(function() {
+		setSidebarTogglePos();
 	});
 
 });

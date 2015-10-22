@@ -66,21 +66,15 @@ body {
   background-color: #428bca;
 }
 
+
 #sidebar-toggle {
-  display: block;
+  display: none;
   width: 20px;
   height: 20px;
   position: fixed;
   top: 50%;
   margin-top: -10px;
   z-index: 1001;
-}
-
-.sidebar-toggle-left {
-  left: 290px;
-}
-
-.sidebar-toggle-right {
   left: 20px;
 }
 
