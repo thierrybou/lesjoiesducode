@@ -5,6 +5,27 @@ Les Joies Du Code
 
 Backfoffice
 
+#### *** CONSEILS *** ####
+
+```
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>name</th>
+			<th>...</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>123</td>
+			<td>Bob</td>
+			<td>...</td>
+		</tr>
+	</tbody>
+</table>
+```
+
 #### *** CONSIGNES *** ####
 
 1. ``Faire la découpe du template ``
