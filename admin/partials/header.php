@@ -30,3 +30,5 @@
 	<?php include_once 'navbar.php'; ?>
 
 	<div class="container-fluid">
+
+		<div class="row">

@@ -14,7 +14,6 @@ $lastUsers = $query->fetchAll();
 
 ?>
 
-		<div class="row">
 
 			<div id="main-container" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<h1 class="page-header">Tableau de bord</h1>
@@ -64,21 +63,17 @@ $lastUsers = $query->fetchAll();
 						<h3 class="panel-title">Dernières inscriptions</h3>
 					</div>
 					<div class="list-group">
-						<a href="#" class="list-group-item">
-							<h4 class="list-group-item-heading">Sarah Connor (2015/02/26)</h4>
-							<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lacinia pharetra est at auctor. Integer maximus neque sodales metus congue, quis aliquet nisl rhoncus...</p>
-						</a>
-						<a href="#" class="list-group-item">
-							<h4 class="list-group-item-heading">Bobby Ewing (2015/02/15)</h4>
-							<p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lacinia pharetra est at auctor. Integer maximus neque sodales metus congue, quis aliquet nisl rhoncus...</p>
-						</a>
+
+						<?php foreach ($lastUsers as $user) { ?>
+							<a href="#" class="list-group-item">
+							<h4 class="list-group-item-heading"><?= $user['firstname'].' '.$user['lastname'].' ('.date('d/m/Y', strtotime($user['creation_date'])).')' ?></h4>
+							<p class="list-group-item-text"><?= 'sexe : '.$user['gender'].', email : '.$user['email'].', newsletter : '.$user['newsletter']=1?'oui':'non' ?></p>
+							</a>
+						<?php } ?>
+
 					</div>
 				</div>
 
 			</div>
-
-			<?php include_once 'partials/sidebar.php'; ?>
-
-		</div><!--/.row -->
 
 	<?php include_once 'partials/footer.php'; ?>
