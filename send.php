@@ -41,7 +41,7 @@ if (!empty($_POST)) {
 		//Si la requête a réussie (c.f. lastInsertId()), on affiche une confirmation à l'utilisateur
 		if (!empty($insert_id)) {
 			$result .= '<div class="alert alert-success">Votre message a bien été envoyé</div>';
-			$result .= '<script>setTimeout(function() { location.href = "article.php?id='.$insert_id.'"; }, 3000);</script>';
+			$result .= redirectJs('article.php?id='.$insert_id, 3);
 		} else {
 			$result .= '<div class="alert alert-danger">Une erreur s\'est produite, merci de réessayer ultèrieurement</div>';
 		}

@@ -2,6 +2,11 @@
 require_once 'inc/config.php';
 require_once '../inc/db.php';
 require_once '../inc/func.php';
+
+if (!userIsLogged() || !userIsAllowedAccess(USER_ROLE_WRITER)) {
+	header('Location: ../login.php');
+	exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

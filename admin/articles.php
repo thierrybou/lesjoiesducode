@@ -8,6 +8,9 @@ $articles = $query->fetchAll();
 		<h1>Articles</h1>
 		<hr>
 
+		<a href="article-add.php" class="btn btn-primary">Ajouter un article</a>
+		<hr>
+
 		<table id="table-dynamic" class="table table-hover">
 			<thead>
 				<tr>

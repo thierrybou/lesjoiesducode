@@ -30,6 +30,16 @@ function getFormatDate($date, $format = 'd/m/Y') {
 	return date($format, strtotime($date));
 }
 
+function redirectJs($url, $delay = 1) {
+	return '
+	<script>
+	setTimeout(function() {
+		location.href = "'.$url.'";
+	}, '.($delay * 1000).');
+	</script>
+	';
+}
+
 // AUTHENT
 
 // Mets les infos de l'utilisateur en session pour le connecter
@@ -40,12 +50,21 @@ function userLogin($user) {
 	$_SESSION['user_id'] = $user['id'];
 	$_SESSION['firstname'] = $user['firstname'];
 	$_SESSION['lastname'] = $user['lastname'];
+	$_SESSION['role'] = $user['role'];
 	return true;
 }
 
 // Vérifie si l'utilisateur est connecté
 function userIsLogged() {
 	return !empty($_SESSION['user_id']);
+}
+
+// Vérifie si l'utilisateur a les droits d'accèder à une page
+function userIsAllowedAccess($role) {
+	if (!empty($_SESSION['role']) && $_SESSION['role'] >= $role) {
+		return true;
+	}
+	return false;
 }
 
 // USER
