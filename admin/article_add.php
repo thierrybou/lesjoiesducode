@@ -1,10 +1,5 @@
-<?php
-require_once 'partials/header.php';
+<?php include_once 'partials/header.php'; 
 
-if (!userIsLogged()) {
-	header('Location: login.php');
-	exit();
-}
 //print_r($_POST);
 
 // Récupérer les données du formulaire depuis le tableau $_POST
@@ -68,17 +63,23 @@ if (!empty($_POST)) {
 			echo $result;
 		} else {
 		?>
-		<form action="send.php" method="POST">
+
+		<form method="POST" class="form-register" novalidate>
+
 			<div class="form-group">
-				<label for="name">Votre nom</label>
-				<input type="text" class="form-control" name="name" id="name" placeholder="Entrez votre nom" value="<?= $name ?>">
+				<label for="name">Name</label>
+				<input type="text" class="form-control" id="name" name="name" placeholder="Name" value="<?= $name ?>" autofocus>
 			</div>
+
 			<div class="form-group">
-				<label for="content">Votre Joie de code</label>
-				<textarea name="content" id="content" class="form-control" rows="5" placeholder="Contenu de votre Joie de code"><?= $content ?></textarea>
+				<label for="content">Content</label>
+				<input type="text" class="form-control" id="content" name="content" placeholder="Content" value="<?= $content ?>">
 			</div>
-			<button type="submit" class="btn btn-default">Envoyer</button>
+
 		</form>
+
 		<?php } ?>
 
-<?php require_once 'partials/footer.php' ?>
+
+
+<?php include_once 'partials/footer.php'; ?>

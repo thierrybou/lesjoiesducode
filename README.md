@@ -3,54 +3,36 @@ Les Joies Du Code
 
 #### *** DESCRIPTION *** ####
 
-Les Joies Du Code version VDM
+Connexion / inscription / déconnexion
 
-#### *** CONSEILS *** ####
+#### *** RAPPEL *** ####
 
-``Tous les templates html sont fournis``
+En PHP, pour réceptionner des données en POST depuis un formulaire, il faut réunir 3 conditions :
 
-``Conseil : `` *Think [DRY](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas)*
+1. Les champs de formulaire doivent être placés au sein d'une balise ``<form></form>``, la balise form est en envoyé en GET par défaut, il faut préciser ``method="POST"`` pour que le formulaire soit soumis en POST
+2. Les champs de formulaire (input, textarea, select..etc) doivent avoir un attribut ``name``
+3. Il faut un button ou un input type submit pour envoyer le formulaire
 
 #### *** CONSIGNES *** ####
 
-1. ``Faire la découpe des templates HTML``
+1. ``Créer la table "user" avec les champs : id, firstname, lastname, gender, email, password, newsletter, register_date``
 
-2. ``Créer la base de données "joiesducode" avec un encodage "utf8_general_ci"
-Créer la table "articles" avec les champs : id, name, content, creation_date``
+2. ``Sur la page register.php, récupérer puis contrôler les données du formulaire.``
+``Si pas d'erreurs, crypter le mot de passe et faire la requête d'insertion dans la table "user"``
 
-3. ``Créer un fichier qui contient une connexion PDO à la base de données, et l'inclure``
+2. ``Sur la page login.php, récupérer puis contrôler les données du formulaire.``
+``Si pas d'erreurs, faire une requête qui va chercher un user pour l'email saisi par l'utilisateur.``
+``Si l'email est trouvé, comparer le mot de passe crypté avec le mot de passe saisi par l'utilisateur.``
+``Si les mots de passe correspondent, ajouter l'id, le prénom et le nom du user en session, puis rediriger vers la page d'accueil``
 
-4. ``Sur la page d'accueil faire une requête qui va chercher les 10 derniers articles
-   Puis les afficher``
+4. ``Dans navbar.php, à l'emplacement des liens Connexion/Inscription, si l'utilisateur est connecté, afficher Bonjour prénom nom, sinon afficher les liens``
 
-5. ``Dans random.php, faire une requête qui va chercher un article au hasard
-Puis l'afficher``
+5. ``Dans send.php, vérifier si l'utilisateur est bien connecté (user id en session), sinon redirection vers login.php``
 
-6. ``Dans search.php, faire une requête qui va chercher un article qui contient ce qu'on a tapé dans le champ de recherche
-Puis afficher le nombre et la liste des résultats``
+6. ``Créer un fichier logout.php qui déconnecte l'utilisateur, puis redirige vers la page d'accueil``
 
-7. ``Dans send.php, faire une requête qui insert un article en base de données
-   Puis afficher un message de confirmation``
-
-8. ``Partout où on affiche un article, si l'article est plus long que 100 caractères, ne garder que les 100 premiers caractères et afficher un lien qui pointe vers l'article au complet``
-
-9. ``Créer une page qui affiche l'article au complet`` ([DRY](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas))
-
-10. ``Dans send.php, ajouter au message de confirmation un lien vers l'article nouvellement créé``
+7. ``Dans navbar.php, afficher après Bonjour prénom nom, un lien vers la page de déconnexion``
 
 #### *** BONUS *** ####
 
-- ``Rendre la navbar dynamique avec affichage de la page active``
-
-- ``Formatter l'affichage des infos d'articles (date en français, conversion des sauts de ligne en balises <br>, première lettre en majuscule sur les noms des auteurs), de l'année en cours dans le footer``
-
-- ``Faire un script qui insert automatiquement des articles avec du contenu.
-Importer les contenus depuis un flux XML (http://feeds.betacie.com/viedemerde)``
-
-- ``Dans send.php, faire en sorte de se prémunir des failles/injections XSS``
-
-- ``Dans send.php, autoriser les balises <b> <strong> <i> <em> pour le champ "name"`` 
-
-- ``Dans send.php, ne supprimer que la balise <script> pour le champ "content"``
-
-
+- ``Au login, gérer la case à cocher Se souvenir de moi``
