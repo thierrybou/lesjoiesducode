@@ -2,7 +2,6 @@ $(function() {
 
 	var setSidebarTogglePos = function() {
 		var width = $('#sidebar-left').css('display') == 'none' ? 20 : $('#sidebar-left').width();
-		console.log(width);
 		$('#sidebar-toggle').css('left', width+'px').show();
 	}
 
@@ -30,5 +29,12 @@ $(function() {
 	$(window).resize(function() {
 		setSidebarTogglePos();
 	});
+});
 
+$(document).ready(function(){
+    $('#table-dynamic').DataTable({
+    	language: {
+	        url: 'js/dataTables.fr_FR.json'
+	    }
+    });
 });

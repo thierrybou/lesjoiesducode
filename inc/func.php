@@ -25,8 +25,14 @@ function cutString($text, $max_length, $end = '...') {
 	return $text;
 }
 
+// Re-formatte une date déjà formattée
+function getFormatDate($date, $format = 'd/m/Y') {
+	return date($format, strtotime($date));
+}
+
 // AUTHENT
 
+// Mets les infos de l'utilisateur en session pour le connecter
 function userLogin($user) {
 	if (empty($user)) {
 		return false;
@@ -37,6 +43,26 @@ function userLogin($user) {
 	return true;
 }
 
+// Vérifie si l'utilisateur est connecté
 function userIsLogged() {
 	return !empty($_SESSION['user_id']);
+}
+
+// USER
+
+// Récupère le nom complet de l'utilisateur
+function user_getFullName($user) {
+	return ucwords($user['firstname'].' '.$user['lastname']);
+}
+
+// Récupère le libellé du sexe de l'utilisateur
+function user_getGenderLabel($gender) {
+	global $genders, $gender_labels;
+	if (isset($genders[$gender])) {
+		$gender = $genders[$gender];
+	}
+	if (isset($gender_labels[$gender])) {
+		return $gender_labels[$gender];
+	}
+	return 'N/A';
 }
