@@ -8,7 +8,7 @@ $articles = $query->fetchAll();
 		<h1>Articles</h1>
 		<hr>
 
-		<a href="article-add.php" class="btn btn-primary">Ajouter un article</a>
+		<a href="article-action.php" class="btn btn-primary">Ajouter un article</a>
 		<hr>
 
 		<table id="table-dynamic" class="table table-hover">
@@ -30,7 +30,8 @@ $articles = $query->fetchAll();
 					<td><?= cutString($article['content'], 50) ?></td>
 					<td><?= getFormatDate($article['creation_date'], 'd/m/Y H:i:s') ?></td>
 					<td>
-
+						<a href="article-action.php?id=<?= $article['id'] ?>&action=update"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp;
+						<a href="article-action.php?id=<?= $article['id'] ?>&action=delete" onclick="return confirm('Etes vous sur ??')"><span class="glyphicon glyphicon-remove"></span></a>
 					</td>
 				</tr>
 				<?php } ?>
