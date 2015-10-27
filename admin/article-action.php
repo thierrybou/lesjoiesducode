@@ -107,11 +107,11 @@ if (!empty($_POST)) {
 			$query->bindValue(':creation_date', $creation_date, PDO::PARAM_STR);
 			$query->execute();
 
-			// On récupère l'identifiant unique automatiquement généré par la requête
 			if ($action == 'update') {
 				$success = $query->rowCount();
 				$success_msg = 'Mise à jour réussie';
 			} else {
+				// On récupère l'identifiant unique automatiquement généré par la requête
 				$success = $db->lastInsertId();
 				$success_msg = 'Insertion réussie';
 			}

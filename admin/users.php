@@ -13,6 +13,9 @@ $users = $query->fetchAll();
 		<h1>Utilisateurs</h1>
 		<hr>
 
+		<a href="user-action.php" class="btn btn-primary">Ajouter un utilisateur</a>
+		<hr>
+
 		<table id="table-dynamic" class="table table-hover">
 			<thead>
 				<tr>
@@ -42,7 +45,8 @@ $users = $query->fetchAll();
 					</td>
 					<td><?= getFormatDate($user['cdate'], 'd/m/Y H:i:s') ?></td>
 					<td>
-
+						<a href="user-action.php?id=<?= $user['id'] ?>&action=update"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp;
+						<a href="user-action.php?id=<?= $user['id'] ?>&action=delete" onclick="return confirm('Etes vous sur ??')"><span class="glyphicon glyphicon-remove"></span></a>
 					</td>
 				</tr>
 				<?php } ?>

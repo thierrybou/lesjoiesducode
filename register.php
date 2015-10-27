@@ -78,6 +78,7 @@ if (!empty($_POST)) {
 					'firstname' => $firstname,
 					'lastname' => $lastname,
 					'role' => 0
+
 				);
 
 				$success = userLogin($user);
