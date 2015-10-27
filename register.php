@@ -76,7 +76,8 @@ if (!empty($_POST)) {
 				$user = array(
 					'id' => $insert_id,
 					'firstname' => $firstname,
-					'lastname' => $lastname
+					'lastname' => $lastname,
+					'role' => 0
 				);
 
 				$success = userLogin($user);

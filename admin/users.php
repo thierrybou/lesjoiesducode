@@ -21,6 +21,7 @@ $users = $query->fetchAll();
 					<th>Nom</th>
 					<th>Email</th>
 					<th>Newsletter</th>
+					<th>Role</th>
 					<th>Date</th>
 					<th>Actions</th>
 				</tr>
@@ -34,6 +35,11 @@ $users = $query->fetchAll();
 					<td><?= ucfirst($user['lastname']) ?></td>
 					<td><a href="mailto:<?= $user['email'] ?>"><?= $user['email'] ?></a></td>
 					<td><?= $user['newsletter'] ?></td>
+					<td>
+						<span class="label label-<?= user_getRoleClass($user['role']) ?>">
+							<?= user_getRoleLabel($user['role']) ?>
+						</span>
+					</td>
 					<td><?= getFormatDate($user['cdate'], 'd/m/Y H:i:s') ?></td>
 					<td>
 

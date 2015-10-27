@@ -74,7 +74,7 @@ function user_getFullName($user) {
 	return ucwords($user['firstname'].' '.$user['lastname']);
 }
 
-// Récupère le libellé du sexe de l'utilisateur
+// Récupère le libellé du sexe de l'utilisateur (c.f. config.php)
 function user_getGenderLabel($gender) {
 	global $genders, $gender_labels;
 	if (isset($genders[$gender])) {
@@ -84,4 +84,28 @@ function user_getGenderLabel($gender) {
 		return $gender_labels[$gender];
 	}
 	return 'N/A';
+}
+
+// Récupère le libellé du role de l'utilisateur (c.f. config.php)
+function user_getRoleLabel($role) {
+	global $role_labels;
+
+	if (!empty($role_labels[$role])) {
+		return $role_labels[$role];
+	}
+	return 'N/A';
+}
+
+function user_getRoleClass($role) {
+	static $role_classes;
+	$role_classes = array(
+		USER_ROLE_DEFAULT => 'default',
+		USER_ROLE_WRITER  => 'info',
+		USER_ROLE_ADMIN   => 'danger',
+	);
+
+	if (!empty($role_classes[$role])) {
+		return $role_classes[$role];
+	}
+	return 'default';
 }
